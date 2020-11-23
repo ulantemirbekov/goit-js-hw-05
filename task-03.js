@@ -1,6 +1,6 @@
 class Storage {
-    constructor(array) {
-        this.items = array;
+    constructor(items) {
+        this.items = items;
     };
     getItems() {
         return this.items;
@@ -9,9 +9,8 @@ class Storage {
         this.items.push(item);
     };
     removeItem(item) {
-        const index = this.items.indexOf(item);
-        if (index >= 0) {
-            this.items.splice(index, 1);
+        if (this.items.includes(item)) {
+            this.items.splice(this.items.indexOf(item), 1)
         };
     };
 };
